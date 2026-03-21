@@ -3,10 +3,10 @@
 [![Chrome Web Store](https://img.shields.io/badge/Chrome%20Web%20Store-Install-brightgreen)](https://chrome.google.com/webstore/detail/webclip)
 [![Edge Add-ons](https://img.shields.io/badge/Edge%20Add--ons-Install-blue)](https://microsoftedge.microsoft.com/addons/detail/webclip)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-[![Version](https://img.shields.io/badge/Version-v2.0.0-orange)](https://github.com/damoncui668/webclip/releases)
+[![Version](https://img.shields.io/badge/Version-v2.1.0-orange)](https://github.com/damoncui668/webclip/releases)
 
 <div align="center">
-  <img src="./docs/ProductPage/webclip-header.png" width="100%" alt="WebClip - 智能 Markdown 剪藏 & 云笔记同步">
+  <img src="./docs/ProductPage/Ready/webclip-header.png" width="100%" alt="WebClip - 智能 Markdown 剪藏 & 云笔记同步">
 </div>
 
 > 一键去标签广告，智能转 Markdown，支持自定义主题、目录导航、搜索跳转、高亮编辑、下载、云笔记同步，支持16+主流社区平台。
@@ -22,7 +22,7 @@
 基于 Mozilla Readability 引擎，精准识别正文内容，自动过滤广告、推荐、评论、标签等干扰信息，深度优化代码块提取，完整保留语法高亮。
 
 <div align="center">
-  <img src="./docs/ProductPage/General_01.png" width="100%" alt="智能文本提取">
+  <img src="./docs/ProductPage/Ready/General_01.png" width="100%" alt="智能文本提取">
 </div>
 
 ### 🎨 个性化阅读体验
@@ -30,7 +30,7 @@
 支持 4 种精美主题（浅色、GitHub、暖纸、深色），3 种字体可选，可调字号、行距，保护视力舒适阅读。
 
 <div align="center">
-  <img src="./docs/ProductPage/General_02.png" width="100%" alt="个性化阅读体验">
+  <img src="./docs/ProductPage/Ready/General_02.png" width="100%" alt="个性化阅读体验">
 </div>
 
 ### ⚡ 高效导航
@@ -38,7 +38,7 @@
 自动生成文章目录，支持章节快速跳转，全文搜索支持高亮定位，目录支持折叠展开。
 
 <div align="center">
-  <img src="./docs/ProductPage/General_03.png" width="100%" alt="高效导航">
+  <img src="./docs/ProductPage/Ready/General_03.png" width="100%" alt="高效导航">
 </div>
 
 ### 🖥️ 在线编辑
@@ -46,7 +46,7 @@
 支持 Markdown 实时编辑与文本编辑模式，即时预览，一键导出。
 
 <div align="center">
-  <img src="./docs/ProductPage/General_04.png" width="100%" alt="在线编辑">
+  <img src="./docs/ProductPage/Ready/General_04.png" width="100%" alt="在线编辑">
 </div>
 
 ### 📤 云笔记同步
@@ -54,7 +54,7 @@
 支持为知笔记等多种云笔记服务，随时随地访问，多平台无缝协作。
 
 <div align="center">
-  <img src="./docs/ProductPage/General_05.png" width="100%" alt="云笔记同步">
+  <img src="./docs/ProductPage/Ready/General_05.png" width="100%" alt="云笔记同步">
 </div>
 
 ---
@@ -94,6 +94,18 @@
 ---
 
 ## 📝 更新日志
+
+### v2.1.0 (2026-03-22)
+
+- 安全加固：修复 7 处 XSS 漏洞，用户数据统一使用 DOM API 渲染
+- 性能优化：CSS 变量驱动主题、按需重建 DOM、事件监听器泄漏修复
+- TOC 优化：页面切换立即清空、代码块注释过滤、格式化操作不再刷新目录
+- 云笔记增强：JSON/form-urlencoded 自动兼容、展开目录自动连接、保存配置等待结果反馈
+- 搜索增强：编辑模式精确定位、防误改保护、预览/编辑模式切换搜索结果无缝衔接
+- 布局优化：编辑框自适应屏幕、表格独立横向滚动、预览区内容铺满
+- Front Matter：模板变量统一支持 `{{title}}`/`{{url}}`/`{{publishedTime}}`
+- 页面刷新跟随：刷新页面后自动重新提取内容
+- 详细变更见 [v2.0→v2.1 架构变更报告](./docs/v2.0-to-v2.1-changelog.md)
 
 ### v2.0.0 (2026-03-18)
 
