@@ -1,149 +1,165 @@
-# WebClip : 智能 Markdown 剪藏 & 云笔记同步
+# WebClip : Smart Markdown Clipper & Cloud Sync
 
 [![Chrome Web Store](https://img.shields.io/badge/Chrome%20Web%20Store-Install-brightgreen)](https://chrome.google.com/webstore/detail/webclip)
 [![Edge Add-ons](https://img.shields.io/badge/Edge%20Add--ons-Install-blue)](https://microsoftedge.microsoft.com/addons/detail/webclip)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-[![Version](https://img.shields.io/badge/Version-v2.1.0-orange)](https://github.com/damoncui668/webclip/releases)
+[![Version](https://img.shields.io/badge/Version-v2.1.3-orange)](https://github.com/damoncui668/webclip/releases)
 
 <div align="center">
-  <img src="./docs/ProductPage/Ready/webclip-header.png" width="100%" alt="WebClip - 智能 Markdown 剪藏 & 云笔记同步">
+  <img src="./docs/ProductPage/Ready/en/pixelRatio_3/webclip-header-1400x560-en.png" width="100%" alt="WebClip - Smart Markdown Clipper & Cloud Sync">
 </div>
 
-> 一键去标签广告，智能转 Markdown，支持自定义主题、目录导航、搜索跳转、高亮编辑、下载、云笔记同步，支持16+主流社区平台。
+> One-click remove ads & tags, smart convert to Markdown. Supports custom themes, TOC navigation, search jump, highlight editing, download & cloud sync. Works with 30+ communities and AI platforms.
 
-[English](./README_EN.md) | 简体中文
+English | [简体中文](./README_ZH.md)
 
 ---
 
-## ✨ 功能特性
+## Features
 
-### 🧠 智能文本提取
+### Smart Text Extraction
 
-基于 Mozilla Readability 引擎，精准识别正文内容，自动过滤广告、推荐、评论、标签等干扰信息，深度优化代码块提取，完整保留语法高亮。
+Intelligently identify main content, auto-filter ads, recommendations, comments, and tags. Deeply optimized code block extraction with syntax highlighting preserved.
 
 <div align="center">
-  <img src="./docs/ProductPage/Ready/General_01.png" width="100%" alt="智能文本提取">
+  <img src="./docs/ProductPage/Ready/en/pixelRatio_3/webclip-screenshot-1-en.png" width="100%" alt="Smart Text Extraction">
 </div>
 
-### 🎨 个性化阅读体验
+### Personalized Reading Experience
 
-支持 4 种精美主题（浅色、GitHub、暖纸、深色），3 种字体可选，可调字号、行距，保护视力舒适阅读。
+4 beautiful themes (Light, GitHub, Sepia, Dark), 3 font families, adjustable font size and line height for comfortable reading.
 
 <div align="center">
-  <img src="./docs/ProductPage/Ready/General_02.png" width="100%" alt="个性化阅读体验">
+  <img src="./docs/ProductPage/Ready/en/pixelRatio_3/webclip-screenshot-2-en.png" width="100%" alt="Personalized Reading Experience">
 </div>
 
-### ⚡ 高效导航
+### Efficient Navigation
 
-自动生成文章目录，支持章节快速跳转，全文搜索支持高亮定位，目录支持折叠展开。
+Auto-generated table of contents with chapter quick-jump support. Full-text search with highlighted positioning. Collapsible/expandable TOC.
 
 <div align="center">
-  <img src="./docs/ProductPage/Ready/General_03.png" width="100%" alt="高效导航">
+  <img src="./docs/ProductPage/Ready/en/pixelRatio_3/webclip-screenshot-3-en.png" width="100%" alt="Efficient Navigation">
 </div>
 
-### 🖥️ 在线编辑
+### Online Editing
 
-支持 Markdown 实时编辑与文本编辑模式，即时预览，一键导出。
+Real-time Markdown editing with instant preview. One-click export to multiple formats.
 
 <div align="center">
-  <img src="./docs/ProductPage/Ready/General_04.png" width="100%" alt="在线编辑">
+  <img src="./docs/ProductPage/Ready/en/pixelRatio_3/webclip-screenshot-4-en.png" width="100%" alt="Online Editing">
 </div>
 
-### 📤 云笔记同步
+### Multi-Platform Cloud Sync
 
-支持为知笔记等多种云笔记服务，随时随地访问，多平台无缝协作。
+Seamless integration with WizNote, Notion, Yuque, Obsidian, Typora and more. Multi-format export: Markdown, PDF, Word, Long Image.
 
 <div align="center">
-  <img src="./docs/ProductPage/Ready/General_05.png" width="100%" alt="云笔记同步">
+  <img src="./docs/ProductPage/Ready/en/pixelRatio_3/webclip-screenshot-5-en.png" width="100%" alt="Cloud Sync">
 </div>
 
 ---
 
-## 🌐 支持的网站
+## Supported Platforms
 
-掘金、知乎、CSDN、博客园、简书、SegmentFault、GitHub、51CTO、开源中国、阿里云、腾讯云、华为云、StackOverflow、MDN、微信公众号等
-
----
-
-## 🚀 快速开始
-
-### 安装
-
-**Chrome Web Store / Edge Add-ons（推荐）**
-
-1. 访问 [Chrome Web Store](https://chrome.google.com/webstore/detail/webclip) 或 [Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/webclip)
-2. 搜索 "WebClip"
-3. 点击安装
-
-### 使用
-
-1. 点击浏览器工具栏的 WebClip 图标
-2. 当前网页内容自动提取并转换为 Markdown
-3. 在侧边栏中编辑、预览和调整格式
-4. 一键复制或保存到云笔记
+Supports 30+ mainstream tech communities, developer platforms, and AI conversation platforms including both domestic and international services.
 
 ---
 
-## 🔒 隐私保护
+## Quick Start
 
-- 所有处理在本地完成，不上传服务器
-- 不收集浏览历史、个人身份信息
-- 云同步仅在用户主动授权后进行
-- 详见 [隐私政策](./docs/PRIVACY.md)
+### Installation
+
+**Chrome Web Store / Edge Add-ons (Recommended)**
+
+1. Visit [Chrome Web Store](https://chrome.google.com/webstore/detail/webclip) or [Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/webclip)
+2. Search for "WebClip"
+3. Click Install
+
+### Usage
+
+1. Click the WebClip icon in browser toolbar
+2. Current webpage content is automatically extracted and converted to Markdown
+3. Edit, preview and adjust format in the sidebar
+4. Copy or save to cloud notes with one click
 
 ---
 
-## 📝 更新日志
+## Privacy Protection
+
+- All processing is done locally, no upload to servers
+- No browsing history or personal identity information collected
+- Cloud sync only after user active authorization
+- See [Privacy Policy](./docs/PRIVACY.md) for details
+
+---
+
+## Changelog
+
+### v2.1.3 (2026-03-26)
+
+- Enhanced AI platform support
+- Improved export functionality
+- UI/UX optimizations
+
+### v2.1.2 (2026-03-23)
+
+- Multi-format export: Markdown, PDF, Word, Long Image
+- PDF smart pagination
+- Word export support
+- Long image export with Retina resolution
+
+### v2.1.1 (2026-03-23)
+
+- Multi-cloud notes service support
+- Local sync with ZIP packaging
+- Service adapter pattern
+- UI refactoring
 
 ### v2.1.0 (2026-03-22)
 
-- 安全加固：修复 7 处 XSS 漏洞，用户数据统一使用 DOM API 渲染
-- 性能优化：CSS 变量驱动主题、按需重建 DOM、事件监听器泄漏修复
-- TOC 优化：页面切换立即清空、代码块注释过滤、格式化操作不再刷新目录
-- 云笔记增强：JSON/form-urlencoded 自动兼容、展开目录自动连接、保存配置等待结果反馈
-- 搜索增强：编辑模式精确定位、防误改保护、预览/编辑模式切换搜索结果无缝衔接
-- 布局优化：编辑框自适应屏幕、表格独立横向滚动、预览区内容铺满
-- Front Matter：模板变量统一支持 `{{title}}`/`{{url}}`/`{{publishedTime}}`
-- 页面刷新跟随：刷新页面后自动重新提取内容
-- 详细变更见 [v2.0→v2.1 架构变更报告](./docs/v2.0-to-v2.1-changelog.md)
+- Security hardening: Fixed XSS vulnerabilities
+- Performance optimization
+- TOC improvements
+- Cloud notes enhancements
+- Search enhancements
 
 ### v2.0.0 (2026-03-18)
 
-- 全新架构：重构提取模块，支持可插拔预处理器
-- 新增支持：华为云、阿里云、腾讯云等云厂商文档
-- 界面优化：新增 4 种主题、3 种字体选择
-- 云同步：支持为知笔记等云存储服务
+- New architecture with pluggable preprocessors
+- Added support for cloud vendor documentation
+- UI optimization with 4 themes and 3 fonts
+- Cloud sync support
 
 ---
 
-## 🤝 贡献
+## Contributing
 
-欢迎提交 Issue 和 Pull Request。
+Welcome to submit Issues and Pull Requests.
 
 - [GitHub Issues](https://github.com/damoncui668/webclip/issues)
 
-## 📄 许可证
+## License
 
 - [MIT License](./LICENSE)
 
 ---
 
-## ☕ 支持项目
+## Support
 
-如果 WebClip 对你有帮助，可以请我喝杯咖啡，支持持续开发！
+If WebClip helps you, consider buying me a coffee to support continuous development!
 
 <div align="center">
   <table>
     <tr>
       <td align="center">
-        <img src="./docs/MoneyQR/WeChat.JPG" width="200" alt="微信支付">
+        <img src="./docs/MoneyQR/WeChat.JPG" width="200" alt="WeChat Pay">
         <br>
-        <sub>微信支付</sub>
+        <sub>WeChat Pay</sub>
       </td>
       <td align="center">
-        <img src="./docs/MoneyQR/ZhiFB.JPG" width="200" alt="支付宝">
+        <img src="./docs/MoneyQR/ZhiFB.JPG" width="200" alt="Alipay">
         <br>
-        <sub>支付宝</sub>
+        <sub>Alipay</sub>
       </td>
     </tr>
   </table>
@@ -151,4 +167,4 @@
 
 ---
 
-让 WebClip 成为你的知识管理助手，轻松构建个人知识库！
+Make WebClip your knowledge management assistant, build your personal knowledge base with ease!
