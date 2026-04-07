@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebClip – Clip Any Web Page to Markdown</title>
+  <meta name="description" content="WebClip is a Chrome/Edge extension that extracts web content and converts it to Markdown with one click. Supports PDF export, cloud sync, and more.">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #1a1a1a; background: #fff; }
+    a { color: #6c47ff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header { padding: 20px 40px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #eee; }
+    header .logo { font-size: 20px; font-weight: 700; }
+    header nav a { margin-left: 24px; color: #444; font-size: 14px; }
+
+    .hero { text-align: center; padding: 80px 20px 60px; }
+    .hero h1 { font-size: 48px; font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+    .hero p { font-size: 20px; color: #555; max-width: 560px; margin: 0 auto 32px; }
+    .hero .cta { display: inline-flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+    .btn { display: inline-block; padding: 12px 28px; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; }
+    .btn-primary { background: #6c47ff; color: #fff; }
+    .btn-primary:hover { background: #5535d4; text-decoration: none; }
+    .btn-secondary { background: #f5f5f5; color: #333; border: 1px solid #ddd; }
+    .btn-secondary:hover { background: #eee; text-decoration: none; }
+
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; max-width: 900px; margin: 0 auto; padding: 60px 20px; }
+    .feature { padding: 24px; border: 1px solid #eee; border-radius: 12px; }
+    .feature .icon { font-size: 28px; margin-bottom: 12px; }
+    .feature h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+    .feature p { font-size: 14px; color: #666; line-height: 1.6; }
+
+    .pricing { background: #f9f8ff; padding: 80px 20px; text-align: center; }
+    .pricing h2 { font-size: 36px; font-weight: 800; margin-bottom: 12px; }
+    .pricing .subtitle { color: #666; margin-bottom: 48px; }
+    .plans { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+    .plan { background: #fff; border: 1px solid #e0d8ff; border-radius: 16px; padding: 32px 28px; width: 240px; text-align: center; }
+    .plan.featured { border-color: #6c47ff; box-shadow: 0 4px 24px rgba(108,71,255,0.12); }
+    .plan .name { font-size: 14px; font-weight: 600; color: #6c47ff; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+    .plan .price { font-size: 40px; font-weight: 800; margin-bottom: 4px; }
+    .plan .period { font-size: 14px; color: #888; margin-bottom: 24px; }
+    .plan ul { list-style: none; text-align: left; margin-bottom: 28px; }
+    .plan ul li { font-size: 14px; color: #444; padding: 5px 0; }
+    .plan ul li::before { content: "✓ "; color: #6c47ff; font-weight: 700; }
+    .free-badge { display: inline-block; background: #f0edff; color: #6c47ff; padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 600; margin-bottom: 24px; }
+
+    footer { text-align: center; padding: 40px 20px; color: #999; font-size: 13px; border-top: 1px solid #eee; }
+    footer a { color: #999; margin: 0 12px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">📎 WebClip</div>
+  <nav>
+    <a href="#features">Features</a>
+    <a href="#pricing">Pricing</a>
+    <a href="https://chrome.google.com/webstore" target="_blank">Install</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>Clip Any Web Page<br>to Markdown</h1>
+  <p>One-click extraction of web content to clean Markdown. Supports PDF export, cloud sync, and 16+ sites.</p>
+  <div class="cta">
+    <a href="https://chrome.google.com/webstore" class="btn btn-primary" target="_blank">Add to Chrome – Free</a>
+    <a href="#pricing" class="btn btn-secondary">View Pro Plans</a>
+  </div>
+</div>
+
+<div id="features" class="features">
+  <div class="feature">
+    <div class="icon">⚡</div>
+    <h3>One-click Clipping</h3>
+    <p>Instantly extract the main content from any web page as clean Markdown.</p>
+  </div>
+  <div class="feature">
+    <div class="icon">📄</div>
+    <h3>PDF & Image Export</h3>
+    <p>Export your clips as PDF, Word, long image, or Markdown file.</p>
+  </div>
+  <div class="feature">
+    <div class="icon">☁️</div>
+    <h3>Cloud Sync</h3>
+    <p>Save directly to Notion, Obsidian, 语雀 or WizNote with one click.</p>
+  </div>
+  <div class="feature">
+    <div class="icon">🎨</div>
+    <h3>Themes & TOC</h3>
+    <p>Beautiful reading themes, table of contents navigation, and full-text search.</p>
+  </div>
+  <div class="feature">
+    <div class="icon">🌐</div>
+    <h3>16+ Site Adapters</h3>
+    <p>Optimized extraction for Medium, GitHub, Reddit, Twitter, 知乎, and more.</p>
+  </div>
+  <div class="feature">
+    <div class="icon">🔒</div>
+    <h3>100% Local</h3>
+    <p>No account required. Your data stays in your browser.</p>
+  </div>
+</div>
+
+<div id="pricing" class="pricing">
+  <h2>Simple, Honest Pricing</h2>
+  <p class="subtitle">Start free. Upgrade when you need more.</p>
+  <div class="plans">
+    <div class="plan">
+      <div class="name">Free</div>
+      <div class="free-badge">Always Free</div>
+      <ul>
+        <li>One-click Markdown clipping</li>
+        <li>Themes & TOC navigation</li>
+        <li>Full-text search</li>
+        <li>Basic export (Markdown)</li>
+        <li>16+ site adapters</li>
+      </ul>
+      <a href="https://chrome.google.com/webstore" class="btn btn-secondary" target="_blank">Install Free</a>
+    </div>
+    <div class="plan">
+      <div class="name">Pro Annual</div>
+      <div class="price">$9.9</div>
+      <div class="period">/ year · cancel anytime</div>
+      <ul>
+        <li>Everything in Free</li>
+        <li>PDF export</li>
+        <li>Image download</li>
+        <li>Cloud sync (Notion, 语雀…)</li>
+        <li>5 devices</li>
+      </ul>
+      <a href="#" id="annualBtn" class="btn btn-secondary">Subscribe →</a>
+    </div>
+    <div class="plan featured">
+      <div class="name">Pro Lifetime</div>
+      <div class="price">$19.9</div>
+      <div class="period">one-time · 5 devices</div>
+      <ul>
+        <li>Everything in Free</li>
+        <li>PDF export</li>
+        <li>Image download</li>
+        <li>Cloud sync (Notion, 语雀…)</li>
+        <li>All future Pro features</li>
+      </ul>
+      <a href="#" id="lifetimeBtn" class="btn btn-primary">Buy Lifetime →</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 WebClip · Made with ❤️ by an indie developer</p>
+  <p style="margin-top:12px">
+    <a href="/webclip/TERMS.html">Terms of Service</a>
+    <a href="/webclip/PRIVACY.html">Privacy Policy</a>
+    <a href="https://github.com/damoncui668/webclip" target="_blank">GitHub</a>
+  </p>
+</footer>
+
+</body>
+</html>
