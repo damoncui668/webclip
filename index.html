@@ -156,5 +156,42 @@
   </p>
 </footer>
 
+
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+<script>
+  var PRICE_ANNUAL   = 'pri_01knky469gjccww23aakek0km5';
+  var PRICE_LIFETIME = 'pri_01knky1az2c1an15cdx4ha1tt5';
+
+  Paddle.Initialize({
+    token: 'live_c28410ad1a5bf9311d9eeed415b',
+    eventCallback: function(event) {
+      if (event.name === 'checkout.completed') {
+        window.location.href = '?checkout=success';
+      }
+    }
+  });
+
+  function openCheckout(priceId) {
+    Paddle.Checkout.open({
+      items: [{ priceId: priceId, quantity: 1 }]
+    });
+  }
+
+  document.getElementById('annualBtn').addEventListener('click', function(e) {
+    e.preventDefault();
+    openCheckout(PRICE_ANNUAL);
+  });
+
+  document.getElementById('lifetimeBtn').addEventListener('click', function(e) {
+    e.preventDefault();
+    openCheckout(PRICE_LIFETIME);
+  });
+
+  // 支持从扩展直接跳转并自动打开 checkout（?plan=annual 或 ?plan=lifetime）
+  var params = new URLSearchParams(window.location.search);
+  var plan = params.get('plan');
+  if (plan === 'annual')   { window.addEventListener('load', function() { openCheckout(PRICE_ANNUAL); }); }
+  if (plan === 'lifetime') { window.addEventListener('load', function() { openCheckout(PRICE_LIFETIME); }); }
+</script>
 </body>
 </html>
