@@ -3,160 +3,677 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WebClip – Clip Any Web Page to Markdown</title>
-  <meta name="description" content="WebClip is a Chrome/Edge extension that extracts web content and converts it to Markdown with one click. Supports PDF export, cloud sync, and more.">
+  <title>WebClip – Smart Markdown Clipper & Cloud Notes Sync</title>
+  <meta name="description" content="One-click remove ads, smart convert to Markdown. Export to PDF, sync to Notion, Obsidian, Yuque. Works on 30+ platforms.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #1a1a1a; background: #fff; }
-    a { color: #6c47ff; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    :root {
+      --bg:        #f5f5f0;
+      --bg-white:  #ffffff;
+      --ink:       #1d1d1f;
+      --sub:       #6e6e73;
+      --border:    #d2d2d7;
+      --accent:    #0071e3;
+      --accent-h:  #0077ed;
+      --green:     #34c759;
+      --radius:    18px;
+    }
 
-    header { padding: 20px 40px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #eee; }
-    header .logo { font-size: 20px; font-weight: 700; }
-    header nav a { margin-left: 24px; color: #444; font-size: 14px; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
-    .hero { text-align: center; padding: 80px 20px 60px; }
-    .hero h1 { font-size: 48px; font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
-    .hero p { font-size: 20px; color: #555; max-width: 560px; margin: 0 auto 32px; }
-    .hero .cta { display: inline-flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
-    .btn { display: inline-block; padding: 12px 28px; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; }
-    .btn-primary { background: #6c47ff; color: #fff; }
-    .btn-primary:hover { background: #5535d4; text-decoration: none; }
-    .btn-secondary { background: #f5f5f5; color: #333; border: 1px solid #ddd; }
-    .btn-secondary:hover { background: #eee; text-decoration: none; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+    }
 
-    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; max-width: 900px; margin: 0 auto; padding: 60px 20px; }
-    .feature { padding: 24px; border: 1px solid #eee; border-radius: 12px; }
-    .feature .icon { font-size: 28px; margin-bottom: 12px; }
-    .feature h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
-    .feature p { font-size: 14px; color: #666; line-height: 1.6; }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; }
 
-    .pricing { background: #f9f8ff; padding: 80px 20px; text-align: center; }
-    .pricing h2 { font-size: 36px; font-weight: 800; margin-bottom: 12px; }
-    .pricing .subtitle { color: #666; margin-bottom: 48px; }
-    .plans { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
-    .plan { background: #fff; border: 1px solid #e0d8ff; border-radius: 16px; padding: 32px 28px; width: 240px; text-align: center; }
-    .plan.featured { border-color: #6c47ff; box-shadow: 0 4px 24px rgba(108,71,255,0.12); }
-    .plan .name { font-size: 14px; font-weight: 600; color: #6c47ff; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
-    .plan .price { font-size: 40px; font-weight: 800; margin-bottom: 4px; }
-    .plan .period { font-size: 14px; color: #888; margin-bottom: 24px; }
-    .plan ul { list-style: none; text-align: left; margin-bottom: 28px; }
-    .plan ul li { font-size: 14px; color: #444; padding: 5px 0; }
-    .plan ul li::before { content: "✓ "; color: #6c47ff; font-weight: 700; }
-    .free-badge { display: inline-block; background: #f0edff; color: #6c47ff; padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 600; margin-bottom: 24px; }
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      height: 52px;
+      background: rgba(245,245,240,0.85);
+      backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
 
-    footer { text-align: center; padding: 40px 20px; color: #999; font-size: 13px; border-top: 1px solid #eee; }
-    footer a { color: #999; margin: 0 12px; }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .nav-logo img { width: 24px; height: 24px; border-radius: 6px; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      color: var(--sub);
+      transition: color .2s;
+    }
+
+    .nav-links a:hover { color: var(--ink); }
+
+    .btn-nav {
+      font-size: 13px !important;
+      font-weight: 600 !important;
+      color: #fff !important;
+      background: var(--accent);
+      padding: 7px 16px;
+      border-radius: 980px;
+      transition: background .2s !important;
+    }
+
+    .btn-nav:hover { background: var(--accent-h) !important; color: #fff !important; }
+
+    /* ── HERO ── */
+    .hero {
+      text-align: center;
+      padding: 90px 24px 0;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(0,113,227,0.1);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 980px;
+      margin-bottom: 28px;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+    }
+
+    .hero h1 {
+      font-size: clamp(40px, 6vw, 72px);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      font-size: clamp(17px, 2vw, 21px);
+      color: var(--sub);
+      line-height: 1.6;
+      max-width: 580px;
+      margin: 0 auto 40px;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 64px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 17px;
+      font-weight: 600;
+      padding: 14px 28px;
+      border-radius: 980px;
+      transition: background .2s, transform .15s;
+    }
+
+    .btn-primary:hover { background: var(--accent-h); transform: scale(1.02); }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(0,0,0,0.06);
+      color: var(--ink);
+      font-size: 17px;
+      font-weight: 600;
+      padding: 14px 28px;
+      border-radius: 980px;
+      transition: background .2s, transform .15s;
+    }
+
+    .btn-secondary:hover { background: rgba(0,0,0,0.10); transform: scale(1.02); }
+
+    .hero-img {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.13);
+    }
+
+    /* ── STATS ── */
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      max-width: 700px;
+      margin: 80px auto;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--bg-white);
+      overflow: hidden;
+    }
+
+    .stat {
+      flex: 1;
+      text-align: center;
+      padding: 32px 24px;
+      border-right: 1px solid var(--border);
+    }
+
+    .stat:last-child { border-right: none; }
+
+    .stat-num {
+      font-size: 36px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: var(--sub);
+    }
+
+    /* ── FEATURE SECTION ── */
+    .feature-section {
+      max-width: 980px;
+      margin: 0 auto 32px;
+      padding: 0 24px;
+      scroll-margin-top: 64px;
+    }
+
+    .feature-row {
+      display: flex;
+      align-items: center;
+      gap: 64px;
+      padding: 72px 56px;
+      background: var(--bg-white);
+      border-radius: var(--radius);
+      margin-bottom: 16px;
+    }
+
+    .feature-row.reverse { flex-direction: row-reverse; }
+
+    .feature-text { flex: 0 0 320px; }
+
+    .feature-tag {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 14px;
+    }
+
+    .feature-text h2 {
+      font-size: clamp(26px, 3vw, 36px);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+
+    .feature-text p {
+      font-size: 16px;
+      color: var(--sub);
+      line-height: 1.7;
+    }
+
+    .feature-img {
+      flex: 1;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.10);
+    }
+
+    /* ── PRICING ── */
+    .pricing-section {
+      max-width: 980px;
+      margin: 0 auto 80px;
+      padding: 0 24px;
+      scroll-margin-top: 64px;
+    }
+
+    .pricing-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .pricing-header h2 {
+      font-size: clamp(24px, 3vw, 36px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+
+    .pricing-header p {
+      font-size: 18px;
+      color: var(--sub);
+    }
+
+    .plans {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .plan {
+      background: var(--bg-white);
+      border-radius: var(--radius);
+      padding: 36px 28px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      border: 1px solid var(--border);
+    }
+
+    .plan.featured {
+      border: 2px solid var(--accent);
+      box-shadow: 0 8px 32px rgba(0,113,227,0.12);
+    }
+
+    .featured-tag {
+      position: absolute;
+      top: -13px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 980px;
+      white-space: nowrap;
+    }
+
+    .plan-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--sub);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 20px;
+    }
+
+    .plan-price {
+      display: flex;
+      align-items: baseline;
+      gap: 2px;
+      margin-bottom: 4px;
+    }
+
+    .plan-price .sym {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--ink);
+      align-self: flex-start;
+      margin-top: 10px;
+    }
+
+    .plan-price .amt {
+      font-size: 52px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      line-height: 1;
+    }
+
+    .plan-period {
+      font-size: 13px;
+      color: var(--sub);
+      margin-bottom: 28px;
+    }
+
+    .plan-divider {
+      height: 1px;
+      background: var(--border);
+      margin-bottom: 24px;
+    }
+
+    .plan-features {
+      list-style: none;
+      flex: 1;
+      margin-bottom: 32px;
+    }
+
+    .plan-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--ink);
+      padding: 7px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      line-height: 1.5;
+    }
+
+    .plan-features li::before {
+      content: '✓';
+      color: var(--green);
+      font-weight: 700;
+      font-size: 13px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .plan-features li.dim { color: var(--sub); }
+    .plan-features li.dim::before { color: var(--border); }
+
+    .plan-btn {
+      display: block;
+      text-align: center;
+      padding: 13px;
+      border-radius: 980px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      font-family: inherit;
+      transition: all .2s;
+      text-decoration: none;
+    }
+
+    .plan-btn-outline {
+      background: rgba(0,0,0,0.05);
+      color: var(--ink);
+    }
+
+    .plan-btn-outline:hover { background: rgba(0,0,0,0.09); }
+
+    .plan-btn-filled {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .plan-btn-filled:hover { background: var(--accent-h); transform: scale(1.02); }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 36px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .footer-copy {
+      font-size: 13px;
+      color: var(--sub);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      color: var(--sub);
+      transition: color .2s;
+    }
+
+    .footer-links a:hover { color: var(--ink); }
+
+    /* ── FADE IN ── */
+    .fade { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+    .fade.in { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links a:not(.btn-nav) { display: none; }
+      .hero { padding: 60px 20px 0; }
+      .stats { flex-direction: column; border-radius: 14px; }
+      .stat { border-right: none; border-bottom: 1px solid var(--border); padding: 24px; }
+      .stat:last-child { border-bottom: none; }
+      .feature-row, .feature-row.reverse { flex-direction: column; gap: 32px; padding: 40px 24px; }
+      .feature-text { flex: none; }
+      .plans { grid-template-columns: 1fr; }
+      footer { flex-direction: column; align-items: flex-start; padding: 32px 20px; }
+    }
   </style>
 </head>
 <body>
 
-<header>
-  <div class="logo">📎 WebClip</div>
-  <nav>
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <img src="images/icon128.png" alt="WebClip">
+    WebClip
+  </div>
+  <div class="nav-links">
     <a href="#features">Features</a>
     <a href="#pricing">Pricing</a>
-    <a href="https://chrome.google.com/webstore" target="_blank">Install</a>
-  </nav>
-</header>
-
-<div class="hero">
-  <h1>Clip Any Web Page<br>to Markdown</h1>
-  <p>One-click extraction of web content to clean Markdown. Supports PDF export, cloud sync, and 16+ sites.</p>
-  <div class="cta">
-    <a href="https://chrome.google.com/webstore" class="btn btn-primary" target="_blank">Add to Chrome – Free</a>
-    <a href="#pricing" class="btn btn-secondary">View Pro Plans</a>
-  </div>
-</div>
-
-<div id="features" class="features">
-  <div class="feature">
-    <div class="icon">⚡</div>
-    <h3>One-click Clipping</h3>
-    <p>Instantly extract the main content from any web page as clean Markdown.</p>
-  </div>
-  <div class="feature">
-    <div class="icon">📄</div>
-    <h3>PDF & Image Export</h3>
-    <p>Export your clips as PDF, Word, long image, or Markdown file.</p>
-  </div>
-  <div class="feature">
-    <div class="icon">☁️</div>
-    <h3>Cloud Sync</h3>
-    <p>Save directly to Notion, Obsidian, 语雀 or WizNote with one click.</p>
-  </div>
-  <div class="feature">
-    <div class="icon">🎨</div>
-    <h3>Themes & TOC</h3>
-    <p>Beautiful reading themes, table of contents navigation, and full-text search.</p>
-  </div>
-  <div class="feature">
-    <div class="icon">🌐</div>
-    <h3>16+ Site Adapters</h3>
-    <p>Optimized extraction for Medium, GitHub, Reddit, Twitter, 知乎, and more.</p>
-  </div>
-  <div class="feature">
-    <div class="icon">🔒</div>
-    <h3>100% Local</h3>
-    <p>No account required. Your data stays in your browser.</p>
-  </div>
-</div>
-
-<div id="pricing" class="pricing">
-  <h2>Simple, Honest Pricing</h2>
-  <p class="subtitle">Start free. Upgrade when you need more.</p>
-  <div class="plans">
-    <div class="plan">
-      <div class="name">Free</div>
-      <div class="free-badge">Always Free</div>
-      <ul>
-        <li>One-click Markdown clipping</li>
-        <li>Themes & TOC navigation</li>
-        <li>Full-text search</li>
-        <li>Basic export (Markdown)</li>
-        <li>16+ site adapters</li>
-      </ul>
-      <a href="https://chrome.google.com/webstore" class="btn btn-secondary" target="_blank">Install Free</a>
-    </div>
-    <div class="plan">
-      <div class="name">Pro Annual</div>
-      <div class="price">$9.9</div>
-      <div class="period">/ year · cancel anytime</div>
-      <ul>
-        <li>Everything in Free</li>
-        <li>PDF export</li>
-        <li>Image download</li>
-        <li>Cloud sync (Notion, 语雀…)</li>
-        <li>5 devices</li>
-      </ul>
-      <a href="#" id="annualBtn" class="btn btn-secondary">Subscribe →</a>
-    </div>
-    <div class="plan featured">
-      <div class="name">Pro Lifetime</div>
-      <div class="price">$19.9</div>
-      <div class="period">one-time · 5 devices</div>
-      <ul>
-        <li>Everything in Free</li>
-        <li>PDF export</li>
-        <li>Image download</li>
-        <li>Cloud sync (Notion, 语雀…)</li>
-        <li>All future Pro features</li>
-      </ul>
-      <a href="#" id="lifetimeBtn" class="btn btn-primary">Buy Lifetime →</a>
-    </div>
-  </div>
-</div>
-
-<footer>
-  <p>© 2026 WebClip · Made with ❤️ by an indie developer</p>
-  <p style="margin-top:12px">
-    <a href="/webclip/TERMS.html">Terms of Service</a>
-    <a href="/webclip/PRIVACY.html">Privacy Policy</a>
     <a href="https://github.com/damoncui668/webclip" target="_blank">GitHub</a>
-  </p>
+    <a href="https://chrome.google.com/webstore" target="_blank" class="btn-nav">Add to Chrome</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">Chrome & Edge Extension · v2.1.3</div>
+  <h1>Smart Markdown Clipper<br>&amp; Cloud Notes Sync</h1>
+  <p>One-click remove ads, smart convert to Markdown. Export to PDF, sync to Notion, Obsidian, Yuque — works on 30+ platforms.</p>
+  <div class="hero-cta">
+    <a href="https://chrome.google.com/webstore" target="_blank" class="btn-primary">
+      Add to Chrome — Free
+    </a>
+    <a href="#pricing" class="btn-secondary">See Pro Plans</a>
+  </div>
+  <div class="hero-img">
+    <img src="docs/ProductPage/Ready/en/pixelRatio_3/webclip-header-1400x560-en.png"
+         alt="WebClip extension in action">
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats fade">
+  <div class="stat">
+    <div class="stat-num">30+</div>
+    <div class="stat-label">Supported Platforms</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">4</div>
+    <div class="stat-label">Export Formats</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">100%</div>
+    <div class="stat-label">Local Processing</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">Free</div>
+    <div class="stat-label">Core Features</div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section id="features" class="feature-section">
+
+  <div class="feature-row fade">
+    <div class="feature-text">
+      <div class="feature-tag">Extraction</div>
+      <h2>One-Click Clip, Smart Ad Removal</h2>
+      <p>Intelligently identifies main content and strips ads, navigation, and noise. Returns a clean, structured Markdown document — instantly.</p>
+    </div>
+    <div class="feature-img">
+      <img src="docs/ProductPage/Ready/en/pixelRatio_3/webclip-screenshot-1-en.png" alt="One-click clipping">
+    </div>
+  </div>
+
+  <div class="feature-row reverse fade">
+    <div class="feature-text">
+      <div class="feature-tag">Reading</div>
+      <h2>Beautiful Themes &amp; Comfortable Reading</h2>
+      <p>4 themes (Light, GitHub, Sepia, Dark), 3 font families, adjustable size and line height. Your content, your way.</p>
+    </div>
+    <div class="feature-img">
+      <img src="docs/ProductPage/Ready/en/pixelRatio_3/webclip-screenshot-2-en.png" alt="Themes and reading">
+    </div>
+  </div>
+
+  <div class="feature-row fade">
+    <div class="feature-text">
+      <div class="feature-tag">Navigation</div>
+      <h2>TOC Navigation &amp; Quick Search</h2>
+      <p>Auto-generated table of contents with chapter jump. Full-text search with instant highlight positioning. Never lose your place.</p>
+    </div>
+    <div class="feature-img">
+      <img src="docs/ProductPage/Ready/en/pixelRatio_3/webclip-screenshot-3-en.png" alt="TOC and search">
+    </div>
+  </div>
+
+  <div class="feature-row reverse fade">
+    <div class="feature-text">
+      <div class="feature-tag">Editing</div>
+      <h2>Real-time Editing &amp; Instant Preview</h2>
+      <p>Edit Markdown directly in the side panel with live preview. Highlight, annotate, and export — all without leaving the page.</p>
+    </div>
+    <div class="feature-img">
+      <img src="docs/ProductPage/Ready/en/pixelRatio_3/webclip-screenshot-4-en.png" alt="Editing">
+    </div>
+  </div>
+
+  <div class="feature-row fade">
+    <div class="feature-text">
+      <div class="feature-tag">Export & Sync</div>
+      <h2>Multi-format Download, Cloud Notes Sync</h2>
+      <p>Export as Markdown, PDF (smart pagination), Word, or long image. Sync directly to Notion, Obsidian, Yuque, or WizNote — with images.</p>
+    </div>
+    <div class="feature-img">
+      <img src="docs/ProductPage/Ready/en/pixelRatio_3/webclip-screenshot-5-en.png" alt="Cloud sync">
+    </div>
+  </div>
+
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="pricing-section">
+  <div class="pricing-header fade">
+    <h2>Simple, Honest Pricing</h2>
+    <p>Start free. Upgrade when you need more.</p>
+  </div>
+
+  <div class="plans fade">
+
+    <!-- FREE -->
+    <div class="plan">
+      <div class="plan-name">Free</div>
+      <div class="plan-price"><span class="amt">$0</span></div>
+      <div class="plan-period">forever, no account needed</div>
+      <div class="plan-divider"></div>
+      <ul class="plan-features">
+        <li>One-click Markdown clipping</li>
+        <li>30+ platform adapters</li>
+        <li>4 themes &amp; TOC navigation</li>
+        <li>Full-text search</li>
+        <li>Markdown file export</li>
+        <li class="dim">PDF / Word / Image export</li>
+        <li class="dim">Cloud sync</li>
+      </ul>
+      <a href="https://chrome.google.com/webstore" target="_blank" class="plan-btn plan-btn-outline">Install Free →</a>
+    </div>
+
+    <!-- PRO ANNUAL -->
+    <div class="plan">
+      <div class="plan-name">Pro Annual</div>
+      <div class="plan-price">
+        <span class="sym">$</span><span class="amt">9.9</span>
+      </div>
+      <div class="plan-period">per year · cancel anytime</div>
+      <div class="plan-divider"></div>
+      <ul class="plan-features">
+        <li>Everything in Free</li>
+        <li>PDF export (smart pagination)</li>
+        <li>Word &amp; long image export</li>
+        <li>Cloud sync (Notion, Obsidian, Yuque…)</li>
+        <li>5 devices</li>
+        <li class="dim">All future Pro features</li>
+      </ul>
+      <button id="annualBtn" class="plan-btn plan-btn-outline">Subscribe →</button>
+    </div>
+
+    <!-- PRO LIFETIME -->
+    <div class="plan featured">
+      <div class="featured-tag">Best Value</div>
+      <div class="plan-name">Pro Lifetime</div>
+      <div class="plan-price">
+        <span class="sym">$</span><span class="amt">19.9</span>
+      </div>
+      <div class="plan-period">one-time payment · 5 devices</div>
+      <div class="plan-divider"></div>
+      <ul class="plan-features">
+        <li>Everything in Free</li>
+        <li>PDF export (smart pagination)</li>
+        <li>Word &amp; long image export</li>
+        <li>Cloud sync (Notion, Obsidian, Yuque…)</li>
+        <li>All future Pro features</li>
+        <li>5 devices · lifetime updates</li>
+      </ul>
+      <button id="lifetimeBtn" class="plan-btn plan-btn-filled">Buy Lifetime →</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-copy">© 2026 WebClip · Made with care by an indie developer</div>
+  <div class="footer-links">
+    <a href="/webclip/TERMS.html">Terms</a>
+    <a href="/webclip/PRIVACY.html">Privacy</a>
+    <a href="https://github.com/damoncui668/webclip" target="_blank">GitHub</a>
+  </div>
 </footer>
 
-
+<!-- PADDLE -->
 <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
 <script>
   var PRICE_ANNUAL   = 'pri_01knky469gjccww23aakek0km5';
@@ -164,34 +681,29 @@
 
   Paddle.Initialize({
     token: 'live_c28410ad1a5bf9311d9eeed415b',
-    eventCallback: function(event) {
-      if (event.name === 'checkout.completed') {
-        window.location.href = '?checkout=success';
-      }
+    eventCallback: function(e) {
+      if (e.name === 'checkout.completed') window.location.href = '?checkout=success';
     }
   });
 
   function openCheckout(priceId) {
-    Paddle.Checkout.open({
-      items: [{ priceId: priceId, quantity: 1 }]
-    });
+    Paddle.Checkout.open({ items: [{ priceId: priceId, quantity: 1 }] });
   }
 
-  document.getElementById('annualBtn').addEventListener('click', function(e) {
-    e.preventDefault();
-    openCheckout(PRICE_ANNUAL);
-  });
+  document.getElementById('annualBtn').addEventListener('click', function() { openCheckout(PRICE_ANNUAL); });
+  document.getElementById('lifetimeBtn').addEventListener('click', function() { openCheckout(PRICE_LIFETIME); });
 
-  document.getElementById('lifetimeBtn').addEventListener('click', function(e) {
-    e.preventDefault();
-    openCheckout(PRICE_LIFETIME);
-  });
+  var plan = new URLSearchParams(window.location.search).get('plan');
+  if (plan === 'annual')   window.addEventListener('load', function() { openCheckout(PRICE_ANNUAL); });
+  if (plan === 'lifetime') window.addEventListener('load', function() { openCheckout(PRICE_LIFETIME); });
 
-  // 支持从扩展直接跳转并自动打开 checkout（?plan=annual 或 ?plan=lifetime）
-  var params = new URLSearchParams(window.location.search);
-  var plan = params.get('plan');
-  if (plan === 'annual')   { window.addEventListener('load', function() { openCheckout(PRICE_ANNUAL); }); }
-  if (plan === 'lifetime') { window.addEventListener('load', function() { openCheckout(PRICE_LIFETIME); }); }
+  // Fade-in on scroll
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade').forEach(function(el) { io.observe(el); });
 </script>
 </body>
 </html>
