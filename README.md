@@ -3,7 +3,7 @@
 [![Chrome Web Store](https://img.shields.io/badge/Chrome%20Web%20Store-Install-brightgreen)](https://chrome.google.com/webstore/detail/webclip)
 [![Edge Add-ons](https://img.shields.io/badge/Edge%20Add--ons-Install-blue)](https://microsoftedge.microsoft.com/addons/detail/webclip)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-[![Version](https://img.shields.io/badge/Version-v2.1.3-orange)](https://github.com/damoncui668/webclip/releases)
+[![Version](https://img.shields.io/badge/Version-v2.1.5-orange)](https://github.com/damoncui668/webclip/releases)
 
 <div align="center">
   <img src="./docs/ProductPage/Ready/en/pixelRatio_3/webclip-header-1400x560-en.png" width="100%" alt="WebClip - Smart Markdown Clipper & Cloud Sync">
@@ -94,6 +94,13 @@ Supports 30+ mainstream tech communities, developer platforms, and AI conversati
 ---
 
 ## Changelog
+
+### v2.1.5 (2026-04-16)
+
+- WebClip Pro paid system launch (Lifetime / Annual plans)
+- License activation & device management
+- Landing page redesign with pricing cards
+- Hotfix: bundle `pro-license.js` into release package
 
 ### v2.1.3 (2026-03-26)
 

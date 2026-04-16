@@ -3,7 +3,7 @@
 [![Chrome Web Store](https://img.shields.io/badge/Chrome%20Web%20Store-安装-brightgreen)](https://chrome.google.com/webstore/detail/webclip)
 [![Edge Add-ons](https://img.shields.io/badge/Edge%20Add--ons-安装-blue)](https://microsoftedge.microsoft.com/addons/detail/webclip)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-[![Version](https://img.shields.io/badge/版本-v2.1.3-orange)](https://github.com/damoncui668/webclip/releases)
+[![Version](https://img.shields.io/badge/版本-v2.1.5-orange)](https://github.com/damoncui668/webclip/releases)
 
 <div align="center">
   <img src="./docs/ProductPage/Ready/zh_CN/pixelRatio_3/webclip-header-1400x560-zh.png" width="100%" alt="WebClip - 智能 Markdown 剪藏 & 云笔记同步">
@@ -94,6 +94,13 @@
 ---
 
 ## 更新日志
+
+### v2.1.5 (2026-04-16)
+
+- 上线 WebClip Pro 付费体系（买断版 / 年付版）
+- License 激活与设备管理
+- 落地页重设计 + 紧凑化定价卡片
+- 修复：发布包缺少 `pro-license.js` 导致升级按钮消失、侧边栏卡在加载
 
 ### v2.1.3 (2026-03-26)
 
