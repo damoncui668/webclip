@@ -1,4 +1,4 @@
-# WebClip — Clip Web Pages & AI Chats into Your Notes
+# WebClip: Pages & AI chats to your notes
 
 [![Chrome Web Store](https://img.shields.io/badge/Chrome%20Web%20Store-Install-brightgreen)](https://chromewebstore.google.com/detail/webclip-smart-markdown-cl/nckpgijbjllidpodngpfhnfapalhhhnj)
 [![Edge Add-ons](https://img.shields.io/badge/Edge%20Add--ons-Install-blue)](https://microsoftedge.microsoft.com/addons/detail/webclip-smart-markdown-c/ldkpclabgpebeajdlcfgoibngkpchbjh)
@@ -6,7 +6,7 @@
 [![Version](https://img.shields.io/badge/Version-v2.1.6-orange)](https://github.com/damoncui668/webclip/releases)
 
 <div align="center">
-  <img src="./docs/ProductPage/Ready/en/pixelRatio_3/webclip-header-1400x560-en.png" width="100%" alt="WebClip - Clip Web Pages & AI Chats into Your Notes">
+  <img src="./docs/ProductPage/Ready/en/pixelRatio_3/webclip-header-1400x560-en.png" width="100%" alt="WebClip: Pages & AI chats to your notes">
 </div>
 
 > Clip any web page or AI chat into clean Markdown, edit it in a live editor, then export or sync to Notion, Obsidian, Typora or local files. 30+ site adapters, multi-format export, 100% local — nothing uploaded.
