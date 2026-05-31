@@ -1,15 +1,15 @@
-# WebClip : 智能 Markdown 剪藏 & 云笔记同步
+# WebClip — 网页和 AI 对话，一键剪进你的笔记
 
-[![Chrome Web Store](https://img.shields.io/badge/Chrome%20Web%20Store-安装-brightgreen)](https://chrome.google.com/webstore/detail/webclip)
-[![Edge Add-ons](https://img.shields.io/badge/Edge%20Add--ons-安装-blue)](https://microsoftedge.microsoft.com/addons/detail/webclip)
+[![Chrome Web Store](https://img.shields.io/badge/Chrome%20Web%20Store-安装-brightgreen)](https://chromewebstore.google.com/detail/webclip-smart-markdown-cl/nckpgijbjllidpodngpfhnfapalhhhnj)
+[![Edge Add-ons](https://img.shields.io/badge/Edge%20Add--ons-安装-blue)](https://microsoftedge.microsoft.com/addons/detail/webclip-smart-markdown-c/ldkpclabgpebeajdlcfgoibngkpchbjh)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-[![Version](https://img.shields.io/badge/版本-v2.1.5-orange)](https://github.com/damoncui668/webclip/releases)
+[![Version](https://img.shields.io/badge/版本-v2.1.6-orange)](https://github.com/damoncui668/webclip/releases)
 
 <div align="center">
-  <img src="./docs/ProductPage/Ready/zh_CN/pixelRatio_3/webclip-header-1400x560-zh.png" width="100%" alt="WebClip - 智能 Markdown 剪藏 & 云笔记同步">
+  <img src="./docs/ProductPage/Ready/zh_CN/pixelRatio_3/webclip-header-1400x560-zh.png" width="100%" alt="WebClip - 网页和 AI 对话，一键剪进你的笔记">
 </div>
 
-> 一键去标签广告，智能转 Markdown。支持自定义主题、目录导航、搜索跳转、高亮编辑。支持 30+ 主流社区及 AI 平台。
+> 把任意网页或 AI 对话一键转成干净 Markdown，存前可实时编辑，再同步到 Notion、Obsidian 等任意云笔记。30+ 站点适配，多格式导出，100% 本地处理不上传。
 
 [English](./README.md) | 简体中文
 
@@ -71,7 +71,7 @@
 
 **Chrome Web Store / Edge Add-ons（推荐）**
 
-1. 访问 [Chrome Web Store](https://chrome.google.com/webstore/detail/webclip) 或 [Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/webclip)
+1. 访问 [Chrome Web Store](https://chromewebstore.google.com/detail/webclip-smart-markdown-cl/nckpgijbjllidpodngpfhnfapalhhhnj) 或 [Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/webclip-smart-markdown-c/ldkpclabgpebeajdlcfgoibngkpchbjh)
 2. 搜索 "WebClip"
 3. 点击安装
 
@@ -94,6 +94,12 @@
 ---
 
 ## 更新日志
+
+### v2.1.6 (2026-05-31)
+
+- 重定位为网页剪藏器：网页 / AI 对话 / 云笔记同步
+- 累计 5 次成功剪藏后引导评分；Markdown 导出带品牌水印（Pro 自动去除）
+- 落地页：文案刷新 + 信任区 + FAQ；滚动揭示不再依赖 Paddle CDN
 
 ### v2.1.5 (2026-04-16)
 

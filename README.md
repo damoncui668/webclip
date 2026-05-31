@@ -1,15 +1,15 @@
-# WebClip : Smart Markdown Clipper & Cloud Sync
+# WebClip — Clip Web Pages & AI Chats into Your Notes
 
-[![Chrome Web Store](https://img.shields.io/badge/Chrome%20Web%20Store-Install-brightgreen)](https://chrome.google.com/webstore/detail/webclip)
-[![Edge Add-ons](https://img.shields.io/badge/Edge%20Add--ons-Install-blue)](https://microsoftedge.microsoft.com/addons/detail/webclip)
+[![Chrome Web Store](https://img.shields.io/badge/Chrome%20Web%20Store-Install-brightgreen)](https://chromewebstore.google.com/detail/webclip-smart-markdown-cl/nckpgijbjllidpodngpfhnfapalhhhnj)
+[![Edge Add-ons](https://img.shields.io/badge/Edge%20Add--ons-Install-blue)](https://microsoftedge.microsoft.com/addons/detail/webclip-smart-markdown-c/ldkpclabgpebeajdlcfgoibngkpchbjh)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-[![Version](https://img.shields.io/badge/Version-v2.1.5-orange)](https://github.com/damoncui668/webclip/releases)
+[![Version](https://img.shields.io/badge/Version-v2.1.6-orange)](https://github.com/damoncui668/webclip/releases)
 
 <div align="center">
-  <img src="./docs/ProductPage/Ready/en/pixelRatio_3/webclip-header-1400x560-en.png" width="100%" alt="WebClip - Smart Markdown Clipper & Cloud Sync">
+  <img src="./docs/ProductPage/Ready/en/pixelRatio_3/webclip-header-1400x560-en.png" width="100%" alt="WebClip - Clip Web Pages & AI Chats into Your Notes">
 </div>
 
-> One-click remove ads & tags, smart convert to Markdown. Supports custom themes, TOC navigation, search jump, highlight editing, download & cloud sync. Works with 30+ communities and AI platforms.
+> Clip any web page or AI chat into clean Markdown, edit it in a live editor, then export or sync to Notion, Obsidian, Typora or local files. 30+ site adapters, multi-format export, 100% local — nothing uploaded.
 
 English | [简体中文](./README_ZH.md)
 
@@ -71,7 +71,7 @@ Supports 30+ mainstream tech communities, developer platforms, and AI conversati
 
 **Chrome Web Store / Edge Add-ons (Recommended)**
 
-1. Visit [Chrome Web Store](https://chrome.google.com/webstore/detail/webclip) or [Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/webclip)
+1. Visit [Chrome Web Store](https://chromewebstore.google.com/detail/webclip-smart-markdown-cl/nckpgijbjllidpodngpfhnfapalhhhnj) or [Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/webclip-smart-markdown-c/ldkpclabgpebeajdlcfgoibngkpchbjh)
 2. Search for "WebClip"
 3. Click Install
 
@@ -94,6 +94,12 @@ Supports 30+ mainstream tech communities, developer platforms, and AI conversati
 ---
 
 ## Changelog
+
+### v2.1.6 (2026-05-31)
+
+- Repositioned as a web clipper: web pages, AI chats & cloud sync
+- Rating prompt after 5 successful clips; Markdown export carries a brand watermark (auto-removed for Pro)
+- Landing page: refreshed copy, trust section & FAQ; scroll-reveal no longer depends on the Paddle CDN
 
 ### v2.1.5 (2026-04-16)
 
