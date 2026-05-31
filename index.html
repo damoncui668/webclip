@@ -955,7 +955,10 @@
   }
 
   function openCheckout(priceId) {
-    if (typeof Paddle === 'undefined' || !Paddle.Checkout) return;
+    if (typeof Paddle === 'undefined' || !Paddle.Checkout) {
+      alert('The checkout component failed to load. Please disable any ad/privacy blocker for this page and try again.');
+      return;
+    }
     Paddle.Checkout.open({ items: [{ priceId: priceId, quantity: 1 }] });
   }
 
