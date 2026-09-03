@@ -3,7 +3,7 @@
 [![Chrome Web Store](https://img.shields.io/badge/Chrome%20Web%20Store-Install-brightgreen)](https://chromewebstore.google.com/detail/webclip-smart-markdown-cl/nckpgijbjllidpodngpfhnfapalhhhnj)
 [![Edge Add-ons](https://img.shields.io/badge/Edge%20Add--ons-Install-blue)](https://microsoftedge.microsoft.com/addons/detail/webclip-smart-markdown-c/ldkpclabgpebeajdlcfgoibngkpchbjh)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-[![Version](https://img.shields.io/badge/Version-v2.1.6-orange)](https://github.com/damoncui668/webclip/releases)
+[![Version](https://img.shields.io/badge/Version-v2.1.7-orange)](https://github.com/damoncui668/webclip/releases)
 
 <div align="center">
   <img src="./docs/ProductPage/Ready/en/pixelRatio_3/webclip-header-1400x560-en.png" width="100%" alt="WebClip: Pages & AI chats to your notes">
@@ -94,6 +94,12 @@ Supports 30+ mainstream tech communities, developer platforms, and AI conversati
 ---
 
 ## Changelog
+
+### v2.1.7 (2026-09-03)
+
+- Improved main-content extraction for Mintlify documentation and slide-style pages
+- Preserved KaTeX formulas in Markdown and rendered them correctly in preview
+- Preserved nested list hierarchy in malformed article HTML
 
 ### v2.1.6 (2026-05-31)
 

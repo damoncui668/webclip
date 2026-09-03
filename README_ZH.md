@@ -3,7 +3,7 @@
 [![Chrome Web Store](https://img.shields.io/badge/Chrome%20Web%20Store-安装-brightgreen)](https://chromewebstore.google.com/detail/webclip-smart-markdown-cl/nckpgijbjllidpodngpfhnfapalhhhnj)
 [![Edge Add-ons](https://img.shields.io/badge/Edge%20Add--ons-安装-blue)](https://microsoftedge.microsoft.com/addons/detail/webclip-smart-markdown-c/ldkpclabgpebeajdlcfgoibngkpchbjh)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-[![Version](https://img.shields.io/badge/版本-v2.1.6-orange)](https://github.com/damoncui668/webclip/releases)
+[![Version](https://img.shields.io/badge/版本-v2.1.7-orange)](https://github.com/damoncui668/webclip/releases)
 
 <div align="center">
   <img src="./docs/ProductPage/Ready/zh_CN/pixelRatio_3/webclip-header-1400x560-zh.png" width="100%" alt="WebClip - 网页和 AI 对话，一键剪进你的笔记">
@@ -94,6 +94,12 @@
 ---
 
 ## 更新日志
+
+### v2.1.7 (2026-09-03)
+
+- 改进 Mintlify 文档和幻灯片页面的正文提取，避免内容缺失
+- 保留 KaTeX 公式，并在 Markdown 预览中正确渲染
+- 修复异常 HTML 列表的层级丢失，保留嵌套结构
 
 ### v2.1.6 (2026-05-31)
 
